@@ -32,7 +32,13 @@
   // nav links close menu + lightbox
   document.querySelectorAll('.site-header a').forEach(function(a){a.addEventListener('click',function(){
     if(!a.closest('.lang')){mnav.hidden=true;btn.setAttribute('aria-expanded','false');}close();});});
+  // logo: back to top without leaving #top in the address
+  var logo=document.querySelector('.logo');
+  if(logo)logo.addEventListener('click',function(e){e.preventDefault();close();mnav.hidden=true;btn.setAttribute('aria-expanded','false');
+    var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    window.scrollTo({top:0,behavior:reduce?'auto':'smooth'});
+    history.replaceState(null,'',location.pathname+location.search);});
   // language switch keeps current section
   document.querySelectorAll('.lang a').forEach(function(a){a.addEventListener('click',function(){
-    if(location.hash){a.href=a.getAttribute('href').split('#')[0]+location.hash;}});});
+    if(location.hash&&location.hash!=='#top'){a.href=a.getAttribute('href').split('#')[0]+location.hash;}});});
 })();
