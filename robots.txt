@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://piasubramaniam.github.io/sitemap.xml
