@@ -5,7 +5,7 @@ html{scroll-behavior:smooth;scroll-padding-top:96px}
 body{margin:0;background:#FFFFFF;color:var(--ink);font-family:Inter,system-ui,-apple-system,'Segoe UI',sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
 body.noscroll{overflow:hidden}
 img{max-width:100%}
-h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
+h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:manual;hyphens:manual}
 a{color:var(--ink)}a:hover{color:var(--muted)}
 :focus-visible{outline:3px solid var(--purple);outline-offset:3px}
 .wrap{max-width:1200px;margin:0 auto;padding-left:48px;padding-right:48px}
