@@ -96,7 +96,9 @@ h2{margin:0;font-family:var(--display);font-weight:600;font-size:clamp(30px,4vw,
 .visit{align-self:flex-start;font-weight:500;text-underline-offset:4px}
 .site-note{margin:0;font-size:14px;color:var(--muted)}
 .more{padding-top:88px;padding-bottom:80px}
-.more>.h3-sub{font-size:clamp(24px,2.6vw,32px);margin-bottom:28px}
+.more>.h3-sub{font-size:clamp(24px,2.6vw,32px);margin-bottom:20px}
+.more .more-grid{margin-top:28px}
+.articles .showmore{margin-top:32px}
 .more-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,360px),1fr));gap:24px}
 .card{border:1px solid #D4D4D4;border-radius:4px;overflow:hidden;display:flex;flex-direction:column}
 .card .thumb{display:block;width:100%;padding:0;border:0;background:none;cursor:zoom-in;position:relative;font:inherit}
@@ -157,7 +159,9 @@ h2{margin:0;font-family:var(--display);font-weight:600;font-size:clamp(30px,4vw,
 /* show more */
 .js .extra{display:none}
 .js .expanded .extra{display:flex}
-.showmore{display:inline-flex;align-items:center;gap:8px;margin-top:28px;padding:12px 22px;border-radius:999px;border:1px solid var(--btn);background:#FFFFFF;color:var(--btn);font:inherit;font-weight:500;cursor:pointer}
+.js .expanded .more-grid.extra{display:grid}
+.js .expanded .art-group.extra{display:block}
+.showmore{display:inline-flex;align-items:center;gap:8px;margin-top:0;padding:12px 22px;border-radius:999px;border:1px solid var(--btn);background:#FFFFFF;color:var(--btn);font:inherit;font-weight:500;cursor:pointer}
 .showmore:hover{background:#F1EDF6}
 .showmore::after{content:'';width:8px;height:8px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:translateY(-2px) rotate(45deg);transition:transform .2s}
 .showmore[aria-expanded="true"]::after{transform:translateY(2px) rotate(-135deg)}
@@ -186,3 +190,6 @@ html:not(.js) .showmore{display:none}
 .hero-grid{gap:24px}
 .portrait{order:-1;flex:0 0 auto;min-width:0;width:112px}
 }
+.more>.h3-sub{margin-bottom:20px}
+.more>.showmore{margin-top:0}
+.js .more.expanded .more-grid{display:grid;margin-top:28px}
