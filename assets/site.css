@@ -60,7 +60,7 @@ h2{margin:0;font-family:var(--display);font-weight:600;font-size:clamp(30px,4vw,
 .skills{display:flex;flex-direction:column;gap:28px;border-top:1px solid #CFCFCF;padding-top:56px}
 .h3-sub{margin:0;font-family:var(--display);font-weight:600;letter-spacing:-.02em;line-height:1.1;color:var(--purple)}
 .skills>.h3-sub{font-size:clamp(26px,2.8vw,34px)}
-.skill-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:32px}
+.skill-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:32px}
 .skill-grid h4{margin:0 0 10px;font-size:16px;font-weight:600;color:var(--purple)}
 .skill-grid ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:4px;font-size:15px;color:var(--body)}
 .tools-title{font-size:clamp(22px,2.2vw,26px);margin-top:16px !important}
@@ -95,7 +95,7 @@ h2{margin:0;font-family:var(--display);font-weight:600;font-size:clamp(30px,4vw,
 .outcome{margin:0;font-size:15px;border-top:1px solid var(--line);padding-top:14px}.outcome b{font-weight:600}
 .visit{align-self:flex-start;font-weight:500;text-underline-offset:4px}
 .site-note{margin:0;font-size:14px;color:var(--muted)}
-.more{padding-top:88px;padding-bottom:80px}
+.more{padding-top:48px;padding-bottom:48px;border-bottom:1px solid var(--line)}
 .more>.h3-sub{font-size:clamp(24px,2.6vw,32px);margin-bottom:20px}
 .more .more-grid{margin-top:28px}
 .articles .showmore{margin-top:32px}
@@ -190,6 +190,12 @@ html:not(.js) .showmore{display:none}
 .hero-grid{gap:24px}
 .portrait{order:-1;flex:0 0 auto;min-width:0;width:112px}
 }
-.more>.h3-sub{margin-bottom:20px}
 .more>.showmore{margin-top:0}
-.js .more.expanded .more-grid{display:grid;margin-top:28px}
+.more>.h3-sub{margin:32px 0 0}
+.js .more:not(.expanded)>.h3-sub{display:none}
+.js .more.expanded .more-grid{display:grid;margin-top:24px}
+.more>.h3-sub{margin-bottom:0}
+.toolrows{display:flex;flex-direction:column;gap:16px}
+.toolrow{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px 20px}
+.toolcat{margin:0;min-width:170px;font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.toolrow .chips{flex:1 1 400px}
