@@ -38,6 +38,24 @@
     var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     window.scrollTo({top:0,behavior:reduce?'auto':'smooth'});
     history.replaceState(null,'',location.pathname+location.search);});
+  // show more / fewer
+  document.querySelectorAll('.showmore').forEach(function(b){b.addEventListener('click',function(){
+    var box=b.parentElement,open=!box.classList.contains('expanded');box.classList.toggle('expanded',open);
+    b.setAttribute('aria-expanded',String(open));b.textContent=open?b.getAttribute('data-less'):b.getAttribute('data-more');
+    if(!open)box.scrollIntoView({behavior:'smooth',block:'start'});});});
+  // contact form (Web3Forms)
+  var FORM_KEY='70bbb39d-9a35-43c0-b669-da03f31ead3b';
+  var form=document.querySelector('.lead-form');
+  if(form)form.addEventListener('submit',function(e){e.preventDefault();
+    var st=form.querySelector('.fstatus'),bt=form.querySelector('.send');st.classList.remove('err');
+    if(!form.checkValidity()){form.reportValidity();return;}
+    if(form.botcheck.checked)return;
+    var fd=new FormData(form);fd.append('access_key',FORM_KEY);fd.delete('botcheck');
+    var label=bt.textContent;bt.disabled=true;bt.textContent=form.getAttribute('data-sending');
+    fetch('https://api.web3forms.com/submit',{method:'POST',body:fd}).then(function(r){return r.json();})
+      .then(function(d){if(d&&d.success){form.reset();st.textContent=form.getAttribute('data-ok');}else{throw 0;}})
+      .catch(function(){st.classList.add('err');st.textContent=form.getAttribute('data-err');})
+      .finally(function(){bt.disabled=false;bt.textContent=label;});});
   // language switch keeps current section
   document.querySelectorAll('.lang a').forEach(function(a){a.addEventListener('click',function(){
     if(location.hash&&location.hash!=='#top'){a.href=a.getAttribute('href').split('#')[0]+location.hash;}});});
