@@ -201,3 +201,4 @@ html:not(.js) .showmore{display:none}
 .toolrow .chips{flex:1 1 400px}
 .lb-count{white-space:nowrap;flex-shrink:0}
 .slide-label{min-width:0}
+.eyebrow .role{white-space:nowrap}
