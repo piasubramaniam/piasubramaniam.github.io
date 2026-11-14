@@ -202,3 +202,4 @@ html:not(.js) .showmore{display:none}
 .lb-count{white-space:nowrap;flex-shrink:0}
 .slide-label{min-width:0}
 .eyebrow .role{white-space:nowrap}
+.fact-small a{color:inherit;text-decoration:underline;text-decoration-color:#B9A8D6;text-underline-offset:3px}.fact-small a:hover{color:var(--btn)}
